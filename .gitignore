@@ -1,6 +1,7 @@
-/build/
-/.vscode/
+/.cache/
 /.vs/
-/.clangd
+/.vscode/
+/build/
 /vendor/
+/.clangd
 /CMakeUserPresets.json
