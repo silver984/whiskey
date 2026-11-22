@@ -68,11 +68,40 @@ install(
   DESTINATION ${WHISKEY_INSTALL_DIR}
 )
 
+set(WHISKEY_TEMPORARY_DIR ${CMAKE_BINARY_DIR}/.temporary)
 set(FRIDA_GUM_DIR ${CMAKE_SOURCE_DIR}/vendor/frida-gum)
 
+if(NOT IS_DIRECTORY ${FRIDA_GUM_DIR})
+  set(FRIDA_GUM_DEVKIT_FILENAME frida-gum-devkit-17.25.2-windows-x86_64.tar.xz)
+  set(FRIDA_GUM_DEVKIT_URL https://github.com/frida/frida/releases/download/17.25.2/${FRIDA_GUM_DEVKIT_FILENAME})
+  set(FRIDA_GUM_DEVKIT_TEMPORARY ${WHISKEY_TEMPORARY_DIR}/${FRIDA_GUM_DEVKIT_FILENAME})
+
+  file(
+    DOWNLOAD
+      ${FRIDA_GUM_DEVKIT_URL}
+      ${FRIDA_GUM_DEVKIT_TEMPORARY}
+    SHOW_PROGRESS 
+    STATUS FRIDA_GUM_DOWNLOAD_STATUS
+  )
+
+  list(GET FRIDA_GUM_DOWNLOAD_STATUS 0 FRIDA_GUM_DOWNLOAD_CODE)
+
+  if(NOT FRIDA_GUM_DOWNLOAD_CODE EQUAL 0)
+    list(GET FRIDA_GUM_DOWNLOAD_STATUS 1 FRIDA_GUM_DOWNLOAD_ERROR)
+    message(FATAL_ERROR "whiskey failed to vendor frida-gum devkit | what: ${FRIDA_GUM_DOWNLOAD_ERROR}")
+  endif()
+
+  file(
+    ARCHIVE_EXTRACT
+    INPUT       ${FRIDA_GUM_DEVKIT_TEMPORARY}
+    DESTINATION ${FRIDA_GUM_DIR}
+  )
+endif()
+
+file(REMOVE_RECURSE ${WHISKEY_TEMPORARY_DIR})
+
 if(WIN32)
-  set(FRIDA_GUM_OS_DIR ${FRIDA_GUM_DIR}/windows)
-  set(FRIDA_GUM_LINK_LIBS ws2_32 psapi shlwapi dnsapi iphlpapi)
+  set(FRIDA_GUM_LINKED_LIBRARIES ws2_32 psapi shlwapi dnsapi iphlpapi)
 else()
   message(FATAL_ERROR "whiskey doesn't support the current operating system")
 endif()
@@ -81,15 +110,15 @@ if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
   message(FATAL_ERROR "whiskey found incompatible architecture")
 endif()
 
-set(FRIDA_GUM_IMPORT ${FRIDA_GUM_OS_DIR}/frida-gum.lib)
+set(FRIDA_GUM_IMPORT ${FRIDA_GUM_DIR}/frida-gum.lib)
 
 add_library(frida_gum STATIC IMPORTED)
 
 set_target_properties (
   frida_gum                     PROPERTIES
   IMPORTED_LOCATION             ${FRIDA_GUM_IMPORT}
-  INTERFACE_INCLUDE_DIRECTORIES ${FRIDA_GUM_OS_DIR}
+  INTERFACE_INCLUDE_DIRECTORIES ${FRIDA_GUM_DIR}
 )
 
-target_link_libraries(frida_gum INTERFACE ${FRIDA_GUM_LINK_LIBS})
+target_link_libraries(frida_gum INTERFACE ${FRIDA_GUM_LINKED_LIBRARIES})
 target_link_libraries(whiskey PRIVATE frida_gum)
