@@ -1,3 +1,5 @@
+#include <whiskey/resolve.h>
+
 #include <Windows.h>
 
 #include <cstdio>
@@ -15,7 +17,7 @@ void startup(void) {
   freopen_s(&fp, "CONOUT$", "w", stderr);
   freopen_s(&fp, "CONIN$", "r", stdin);
   std::ios::sync_with_stdio();
-  std::println("hello world");
+  std::println("{:#x}", base_addr());
 }
 
 } // namespace whiskey

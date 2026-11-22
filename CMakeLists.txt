@@ -6,5 +6,8 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 project(whiskey VERSION 1.0.0 LANGUAGES C CXX)
 
+set(WHISKEY_OUTPUT_DIR ${CMAKE_BINARY_DIR}/output)
+file(MAKE_DIRECTORY ${WHISKEY_OUTPUT_DIR})
+
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/zlib-proxy)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/zlib1-proxy)

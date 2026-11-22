@@ -1,23 +1,96 @@
 CCObject:
-  bases: [CCObject]
+  namespace: cocos2d
+  bases: [CCCopying]
+  static-functions:
+    - name: copyWithZone
+      return-type: CCObject*
+      args:
+        - type: DS_Dictionary*
+      instructions:
+        out-of-line-definition: |
+          return nullptr;
   member-functions:
     - name: acceptVisitor
+      return-type: void
+      args:
+        - type: CCDataVisitor*
       specifiers: [virtual]
-      qualifiers: []
-      args: [CCDataVisitor*]
-      instructions:
+      instructions: >
         48 8b 02 4c 8b c2 48 8b d1 49 8b c8 48 ff 60 08
+
     - name: autorelease
-      specifiers: []
-      qualifiers: []
-      args: []
-      instructions:
+      return-type: CCObject*
+      instructions: >
         40 53 48 83 ec 20 48 8b d9 e8 ?? ?? ?? ?? 48 8b
         c8 48 8b d3 e8 ?? ?? ?? ?? 48 8b c3 48 83 c4 20
         5b c3
+
     - name: copy
-      specifiers: []
-      qualifiers: []
-      args: []
-      instructions:
-        48 8b 01 33 d2 48 ff 20 cc cc cc cc cc cc cc cc
+      return-type: CCObject*
+      instructions: >
+        48 8b 01 33 d2 48 ff 20
+
+    - name: getTag
+      return-type: int
+      specifiers: [virtual]
+      instructions: >
+        8b 41 10 c3
+
+    - name: isEqual
+      return-type: bool
+      args:
+        - type: CCObject const*
+          name: pObject
+      specifiers: [virtual]
+      instructions: >
+        48 3b ca 0f 94 c0 c3
+
+    - name: isSingleReference
+      return-type: bool
+      instructions: >
+        83 79 14 01 0f 94 c0 c3
+
+    - name: release
+      return-type: void
+      instructions: >
+        83 41 14 ff 75 0c 48 8b 01 ba 01 00 00 00 48 ff
+        60 08 c3
+
+    - name: retain
+      return-type: void
+      instructions: >
+        ff 41 14 c3
+
+    - name: retainCount
+      return-type: int
+      instructions: >
+        8b 41 14 c3
+
+    - name: setObjType
+      return-type: void
+      args:
+        - type: CCObjectType
+      instructions: >
+        89 51 1c c3
+
+    - name: setTag
+      return-type: void
+      args:
+        - type: int
+      instructions: >
+        89 51 10 c3
+  fields:
+    - type: unsigned int
+      name: m_uID
+
+    - type: int
+      name: m_nLuaID
+    
+    - type: int
+      name: m_nTag
+    
+    - type: unsigned int
+      name: m_uReference
+    
+    - type: unsigned int
+      name: m_uAutoReleaseCount

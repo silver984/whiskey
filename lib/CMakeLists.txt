@@ -25,7 +25,7 @@ target_include_directories(
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
-file(GLOB WHISKEY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c*)
+file(GLOB_RECURSE WHISKEY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c*)
 target_sources(whiskey PRIVATE ${WHISKEY_SOURCES})
 
 install(
@@ -118,3 +118,8 @@ set_target_properties(
 
 target_link_libraries(frida_gum INTERFACE ws2_32 psapi shlwapi dnsapi iphlpapi)
 target_link_libraries(whiskey PRIVATE frida_gum)
+
+add_custom_command(
+  TARGET whiskey POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE_DIR:whiskey>/whiskey.dll ${WHISKEY_OUTPUT_DIR}
+)
