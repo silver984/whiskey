@@ -110,7 +110,7 @@ file(REMOVE_RECURSE ${WHISKEY_TEMPORARY_DIR})
 
 add_library(frida_gum STATIC IMPORTED)
 
-set_target_properties (
+set_target_properties(
   frida_gum                     PROPERTIES
   IMPORTED_LOCATION             ${FRIDA_GUM_DIR}/frida-gum.lib
   INTERFACE_INCLUDE_DIRECTORIES ${FRIDA_GUM_DIR}
