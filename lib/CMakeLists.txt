@@ -1,3 +1,11 @@
+if(NOT WIN32)
+  message(FATAL_ERROR "whiskey doesn't support the current operating system")
+endif()
+
+if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+  message(FATAL_ERROR "whiskey found incompatible architecture")
+endif()
+
 add_library(whiskey SHARED)
 
 include(GenerateExportHeader)
@@ -63,8 +71,8 @@ install(
 
 install(
   FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/whiskey_config.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/whiskey_config_version.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/whiskey_config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/whiskey_config_version.cmake
   DESTINATION ${WHISKEY_INSTALL_DIR}
 )
 
@@ -78,8 +86,8 @@ if(NOT IS_DIRECTORY ${FRIDA_GUM_DIR})
 
   file(
     DOWNLOAD
-      ${FRIDA_GUM_DEVKIT_URL}
-      ${FRIDA_GUM_DEVKIT_TEMPORARY}
+    ${FRIDA_GUM_DEVKIT_URL}
+    ${FRIDA_GUM_DEVKIT_TEMPORARY}
     SHOW_PROGRESS 
     STATUS FRIDA_GUM_DOWNLOAD_STATUS
   )
@@ -100,25 +108,13 @@ endif()
 
 file(REMOVE_RECURSE ${WHISKEY_TEMPORARY_DIR})
 
-if(WIN32)
-  set(FRIDA_GUM_LINKED_LIBRARIES ws2_32 psapi shlwapi dnsapi iphlpapi)
-else()
-  message(FATAL_ERROR "whiskey doesn't support the current operating system")
-endif()
-
-if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
-  message(FATAL_ERROR "whiskey found incompatible architecture")
-endif()
-
-set(FRIDA_GUM_IMPORT ${FRIDA_GUM_DIR}/frida-gum.lib)
-
 add_library(frida_gum STATIC IMPORTED)
 
 set_target_properties (
   frida_gum                     PROPERTIES
-  IMPORTED_LOCATION             ${FRIDA_GUM_IMPORT}
+  IMPORTED_LOCATION             ${FRIDA_GUM_DIR}/frida-gum.lib
   INTERFACE_INCLUDE_DIRECTORIES ${FRIDA_GUM_DIR}
 )
 
-target_link_libraries(frida_gum INTERFACE ${FRIDA_GUM_LINKED_LIBRARIES})
+target_link_libraries(frida_gum INTERFACE ws2_32 psapi shlwapi dnsapi iphlpapi)
 target_link_libraries(whiskey PRIVATE frida_gum)
