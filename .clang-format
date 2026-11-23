@@ -28,11 +28,15 @@ AllowShortLambdasOnASingleLine: Empty
 AllowShortEnumsOnASingleLine: false
 AllowShortCompoundRequirementOnASingleLine: true
 
-AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveAssignments:
+  Enabled: true
+  AlignFunctionDeclarations: true
 AlignConsecutiveMacros: Consecutive
 AlignConsecutiveBitFields: Consecutive
 AlignConsecutiveDeclarations:
-  Enabled: false
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
 AlignConsecutiveShortCaseStatements:
   Enabled: true
 AlignArrayOfStructures: Left
@@ -50,3 +54,11 @@ QualifierAlignment: Right
 
 SortIncludes:
   Enabled: true
+
+SpacesInParens: Custom
+SpacesInParensOptions:
+  InConditionalStatements: true
+  InCStyleCasts: true
+  InEmptyParentheses: true
+  Other: true
+SpaceBeforeParens: Always

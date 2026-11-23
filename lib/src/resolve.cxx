@@ -4,8 +4,9 @@
 
 namespace whiskey {
 
-std::uintptr_t base_addr(void) {
-  static std::uintptr_t const out = reinterpret_cast<std::uintptr_t>(GetModuleHandleW(nullptr));
+std::uintptr_t base_addr ( std::wstring_view name ) {
+  static std::uintptr_t const out =
+    reinterpret_cast<std::uintptr_t> ( GetModuleHandleW ( name.data ( ) ) );
   return out;
 }
 

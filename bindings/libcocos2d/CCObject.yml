@@ -1,96 +1,141 @@
 CCObject:
   namespace: cocos2d
   bases: [CCCopying]
-  static-functions:
-    - name: copyWithZone
-      return-type: CCObject*
+  constructors:
+    - type: default
       args:
-        - type: DS_Dictionary*
-      instructions:
-        out-of-line-definition: |
-          return nullptr;
-  member-functions:
-    - name: acceptVisitor
-      return-type: void
-      args:
-        - type: CCDataVisitor*
-      specifiers: [virtual]
       instructions: >
-        48 8b 02 4c 8b c2 48 8b d1 49 8b c8 48 ff 60 08
+        33 d2 c7 41 10 ff ff ff ff 48 8d 05 ?? ?? ?? ??
+        89 51 0c 48 89 01 8b 05 7c 39 1a 00 48 c7 41 14
+        01 00 00 00 48 c7 41 20 ff ff ff ff 48 89 51 2c
+        89 51 34 83 f8 fe 72 02 8b c2 ff c0 89 05 56 39
+        1a 00 89 41 08 48 8b c1 c3 cc cc cc cc cc cc cc
 
+    - type: copy
+      instructions: >
+        48 8d 05 ?? ?? ?? ?? 48 89 01 8b 42 08 89 41 08
+        8b 42 0c 89 41 0c 8b 42 10 89 41 10 8b 42 14 89
+        41 14 8b 42 18 89 41 18 8b 42 1c 89 41 1c 8b 42
+        20 89 41 20 8b 42 24 89 41 24 8b 42 28 89 41 28
+        8b 42 2c 89 41 2c 8b 42 30 89 41 30 8b 42 34 89
+        41 34 48 8b c1 c3 cc cc cc cc cc cc cc cc cc cc
+  member-functions:
     - name: autorelease
       return-type: CCObject*
+      args:
+      specifiers: []
+      qualifiers: []
       instructions: >
         40 53 48 83 ec 20 48 8b d9 e8 ?? ?? ?? ?? 48 8b
         c8 48 8b d3 e8 ?? ?? ?? ?? 48 8b c3 48 83 c4 20
-        5b c3
+        5b c3 cc cc cc cc cc cc cc cc cc cc cc cc cc cc
 
     - name: copy
       return-type: CCObject*
+      args:
+      specifiers: []
+      qualifiers: []
       instructions: >
-        48 8b 01 33 d2 48 ff 20
+        48 8b 01 33 d2 48 ff 20 cc cc cc cc cc cc cc cc
 
     - name: getTag
       return-type: int
       specifiers: [virtual]
-      instructions: >
-        8b 41 10 c3
+      qualifiers: [const]
+      instructions:
+        inline: |
+          return m_nTag;
 
     - name: isEqual
       return-type: bool
       args:
         - type: CCObject const*
-          name: pObject
       specifiers: [virtual]
-      instructions: >
-        48 3b ca 0f 94 c0 c3
+      qualifiers: []
+      instructions:
+        inline: |
+          return this == ${param_1};
 
     - name: isSingleReference
       return-type: bool
-      instructions: >
-        83 79 14 01 0f 94 c0 c3
+      args:
+      specifiers: []
+      qualifiers: [const]
+      instructions:
+        inline: |
+          return m_uReference == 1;
 
     - name: release
       return-type: void
+      args:
+      specifiers: []
+      qualifiers: []
       instructions: >
         83 41 14 ff 75 0c 48 8b 01 ba 01 00 00 00 48 ff
-        60 08 c3
+        60 08 c3 cc cc cc cc cc cc cc cc cc cc cc cc cc
 
     - name: retain
       return-type: void
+      args:
+      specifiers: []
+      qualifiers: []
       instructions: >
-        ff 41 14 c3
+        ff 41 14 c3 cc cc cc cc cc cc cc cc cc cc cc cc
 
     - name: retainCount
-      return-type: int
+      return-type: unsigned int
+      args:
+      specifiers: []
+      qualifiers: [const]
       instructions: >
-        8b 41 14 c3
+        8b 41 14 c3 cc cc cc cc cc cc cc cc cc cc cc cc
 
     - name: setObjType
       return-type: void
       args:
-        - type: CCObjectType
-      instructions: >
-        89 51 1c c3
+        - type: int
+      specifiers: []
+      qualifiers: []
+      instructions:
+        inline: |
+          m_eObjType = ${param_1};
 
     - name: setTag
       return-type: void
       args:
         - type: int
-      instructions: >
-        89 51 10 c3
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline: |
+          m_nTag = ${param_1};
   fields:
-    - type: unsigned int
+    - type:
+        name: unsigned int
+        length:
       name: m_uID
 
-    - type: int
+    - type:
+        name: int
+        length:
       name: m_nLuaID
     
-    - type: int
+    - type:
+        name: int
+        length:
       name: m_nTag
     
-    - type: unsigned int
+    - type:
+        name: unsigned 
+        length:
       name: m_uReference
     
-    - type: unsigned int
+    - type:
+        name: unsigned int
+        length:
       name: m_uAutoReleaseCount
+    
+    - type:
+        name: int
+        length:
+      name: m_eObjType
