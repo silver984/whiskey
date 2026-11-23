@@ -4,14 +4,13 @@
 #include <whiskey/export.h>
 
 #include <cstdint>
-#include <string_view>
 
 namespace whiskey {
 
-[[nodiscard]] WHISKEY_EXPORT std::uintptr_t base_addr ( std::wstring_view name );
+[[nodiscard]] WHISKEY_EXPORT std::uintptr_t base_addr ( wchar_t const* name );
 
 template <typename T>
-[[nodiscard]] T resolve ( std::wstring_view name, std::uintptr_t offset ) {
+[[nodiscard]] T resolve ( wchar_t const* name, std::uintptr_t offset ) {
   T out = reinterpret_cast<T> ( base_addr ( name ) + offset );
   return out;
 }

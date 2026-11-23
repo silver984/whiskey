@@ -8,7 +8,7 @@
 
 namespace whiskey {
 
-void startup ( ) {
+void setup ( ) {
   if ( !AllocConsole ( ) ) {
     return;
   }
@@ -17,15 +17,16 @@ void startup ( ) {
   freopen_s ( &fp, "CONOUT$", "w", stderr );
   freopen_s ( &fp, "CONIN$", "r", stdin );
   std::ios::sync_with_stdio ( );
-  std::println ( "Geomerty Dash base addr: {:#x}", base_addr ( L"GeometryDash.exe" ) );
+  std::println ( "{:#x} | {:#x} | {:#x}", base_addr ( nullptr ), base_addr ( L"libcocos2d.dll" ),
+                 base_addr ( L"whiskey.dll" ) );
 }
 
 } // namespace whiskey
 
 BOOL APIENTRY DllMain ( HMODULE, DWORD reason, LPVOID ) {
-  if ( reason != DLL_PROCESS_ATTACH ) {
+  if ( reason == DLL_PROCESS_ATTACH ) {
+    whiskey::setup ( );
     return TRUE;
   }
-  whiskey::startup ( );
   return TRUE;
 }

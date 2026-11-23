@@ -6,7 +6,7 @@ BOOL APIENTRY DllMain ( HMODULE, DWORD reason, LPVOID ) {
   }
 
   LPTHREAD_START_ROUTINE load_whiskey_dll = [] ( LPVOID ) -> DWORD {
-    HMODULE whiskey = LoadLibraryW ( L"whiskey.dll" );
+    LoadLibraryW ( L"whiskey.dll" );
     return 0;
   };
 
