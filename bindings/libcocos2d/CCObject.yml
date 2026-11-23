@@ -50,6 +50,7 @@ CCObject:
       return-type: bool
       args:
         - type: CCObject const*
+          name:
       specifiers: [virtual]
       qualifiers: []
       instructions:
@@ -94,6 +95,7 @@ CCObject:
       return-type: void
       args:
         - type: int
+          name:
       specifiers: []
       qualifiers: []
       instructions:
@@ -104,6 +106,7 @@ CCObject:
       return-type: void
       args:
         - type: int
+          name:
       specifiers: [virtual]
       qualifiers: []
       instructions:
