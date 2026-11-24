@@ -1,0 +1,23 @@
+class:
+  name: CCCopying
+  namespace: cocos2d
+  bases: []
+  module:
+    name: libcocos2d
+    type: shared-lib
+
+  constructors: null
+  static-functions: null
+  member-functions:
+    - name: copyWithZone
+      return-type: CCObject*
+      args:
+        - { type: CCZone*, name: pZone }
+
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          return nullptr;
+
+  fields: null

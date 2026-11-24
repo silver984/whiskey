@@ -1,0 +1,12 @@
+class:
+  name: CCZone
+  namespace: cocos2d
+  bases: []
+  module:
+    name: libcocos2d
+    type: shared-lib
+  
+  constructors: null
+  static-functions: null
+  member-functions: null
+  fields: null
