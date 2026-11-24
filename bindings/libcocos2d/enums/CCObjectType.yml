@@ -1,3 +1,4 @@
 enum:
   name: CCObjectType
-  underlying-type: null
+  underlying-type: int
+  values: null

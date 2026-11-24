@@ -6,7 +6,15 @@ class:
     name: libcocos2d
     type: shared-lib
   
-  constructors: null
+  constructors:
+    # ??0CCZone@cocos2d@@QEAA@PEAVCCObject@1@@Z
+    - args:
+      - { type: CCObject*, name: null }
+    
+      instructions:
+        inline-definition: |
+          // WHISKEY_ASSERT_TODO_INLINE_DEF();
+  
   static-functions: null
   member-functions: null
   fields: null

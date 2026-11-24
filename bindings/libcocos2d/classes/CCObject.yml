@@ -8,8 +8,7 @@ class:
 
   constructors:
     # "??0CCObject@cocos2d@@QEAA@XZ"
-    - type: default
-      args: null
+    - args: null
       instructions: >
         33 d2 c7 41 10 ff ff ff ff 48 8d 05 ?? ?? ?? ??
         89 51 0c 48 89 01 8b 05 7c 39 1a 00 48 c7 41 14
@@ -18,8 +17,7 @@ class:
         1a 00 89 41 08 48 8b c1 c3
 
     # ??0CCObject@cocos2d@@QEAA@AEBV01@@Z
-    - type: copy
-      args:
+    - args:
         - { type: CCObject const&, name: null }
 
       instructions: >
