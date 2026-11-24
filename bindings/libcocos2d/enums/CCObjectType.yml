@@ -1,0 +1,3 @@
+enum:
+  name: CCObjectType
+  underlying-type: null

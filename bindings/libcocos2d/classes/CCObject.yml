@@ -1,0 +1,227 @@
+class:
+  name: CCObject
+  namespace: cocos2d
+  bases: [CCCopying]
+  module:
+    name: libcocos2d
+    type: shared-lib
+
+  constructors:
+    # "??0CCObject@cocos2d@@QEAA@XZ"
+    - type: default
+      args: null
+      instructions: >
+        33 d2 c7 41 10 ff ff ff ff 48 8d 05 ?? ?? ?? ??
+        89 51 0c 48 89 01 8b 05 7c 39 1a 00 48 c7 41 14
+        01 00 00 00 48 c7 41 20 ff ff ff ff 48 89 51 2c
+        89 51 34 83 f8 fe 72 02 8b c2 ff c0 89 05 56 39
+        1a 00 89 41 08 48 8b c1 c3
+
+    # ??0CCObject@cocos2d@@QEAA@AEBV01@@Z
+    - type: copy
+      args:
+        - { type: CCObject const&, name: null }
+
+      instructions: >
+        48 8d 05 ?? ?? ?? ?? 48 89 01 8b 42 08 89 41 08
+        8b 42 0c 89 41 0c 8b 42 10 89 41 10 8b 42 14 89
+        41 14 8b 42 18 89 41 18 8b 42 1c 89 41 1c 8b 42
+        20 89 41 20 8b 42 24 89 41 24 8b 42 28 89 41 28
+        8b 42 2c 89 41 2c 8b 42 30 89 41 30 8b 42 34 89
+        41 34 48 8b c1 c3
+  
+  # ??1CCObject@cocos2d@@UEAA@XZ
+  destructor:
+    specifiers: [virtual]
+    instructions: >
+      48 89 5c 24 08 57 48 83 ec 20 48 8b d9 48 8d 05
+      ?? ?? ?? ?? 48 89 01 83 79 18 00 76 10 e8 ?? ??
+      ?? ?? 48 8b c8 48 8b d3 e8 ?? ?? ?? ?? 83 7b 0c
+      00 74 1d e8 ?? ?? ?? ?? 48 8b 08 48 8b 01 48 8b
+      d3 ff 50 10 90 48 8b 5c 24 30 48 83 c4 20 5f c3
+
+  static-functions:
+    # ?createWithCoder@CCObject@cocos2d@@SAPEAV12@PEAVDS_Dictionary@@@Z
+    - name: createWithCoder
+      return-type: CCObject*
+      args:
+        - { type: DS_Dictionary*, name: null }
+
+      specifiers: []
+      instructions:
+        inline-definition: |
+          return nullptr;
+
+  member-functions:
+    # ?isEqual@CCObject@cocos2d@@UEAA_NPEBV12@@Z
+    - name: isEqual
+      return-type: bool
+      args:
+        - { type: CCObject const*, name: null }
+
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          return this == ${param_1};
+
+    # ?acceptVisitor@CCObject@cocos2d@@UEAAXAEAVCCDataVisitor@2@@Z
+    - name: acceptVisitor
+      return-type: void
+      args:
+        - { type: CCDataVisitor&, name: null }
+      
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          return ${param_1}.visitObject(this);
+
+    # ?encodeWithCoder@CCObject@cocos2d@@UEAAXPEAVDS_Dictionary@@@Z
+    - name: encodeWithCoder
+      return-type: void
+      args:
+        - { type: DS_Dictionary*, name: null }
+
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          // no-op
+      
+    # ?update@CCObject@cocos2d@@UEAAXM@Z
+    - name: update
+      return-type: void
+      args:
+        - { type: float, name: dt }
+      
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          // no-op
+
+    # todo: ?canEncode@CCObject@cocos2d@@UEAA_NXZ
+    - name: canEncode
+      return-type: bool
+      args: null
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          return false;
+
+    # ?getTag@CCObject@cocos2d@@UEBAHXZ
+    - name: getTag
+      return-type: int
+      specifiers: [virtual]
+      qualifiers: [const]
+      instructions:
+        inline-definition: |
+          return m_nTag;
+
+    # ?setTag@CCObject@cocos2d@@UEAAXH@Z
+    - name: setTag
+      return-type: void
+      args:
+        - { type: int, name: null }
+        
+      specifiers: [virtual]
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          m_nTag = ${param_1};
+
+    # ?autorelease@CCObject@cocos2d@@QEAAPEAV12@XZ
+    - name: autorelease
+      return-type: CCObject*
+      args: null
+      specifiers: []
+      qualifiers: []
+      instructions: >
+        40 53 48 83 ec 20 48 8b d9 e8 ?? ?? ?? ?? 48 8b
+        c8 48 8b d3 e8 ?? ?? ?? ?? 48 8b c3 48 83 c4 20
+        5b c3
+
+    # ?copy@CCObject@cocos2d@@QEAAPEAV12@XZ
+    - name: copy
+      return-type: CCObject*
+      args: null
+      specifiers: []
+      qualifiers: []
+      instructions: >
+        48 8b 01 33 d2 48 ff 20
+    
+    # ?isSingleReference@CCObject@cocos2d@@QEBA_NXZ
+    - name: isSingleReference
+      return-type: bool
+      args:
+      specifiers: []
+      qualifiers: [const]
+      instructions:
+        inline-definition: |
+          return m_uReference == 1;
+
+    # ?release@CCObject@cocos2d@@QEAAXXZ
+    - name: release
+      return-type: void
+      args: null
+      specifiers: []
+      qualifiers: []
+      instructions: >
+        83 41 14 ff 75 0c 48 8b 01 ba 01 00 00 00 48 ff
+        60 08 c3
+
+    # ?retain@CCObject@cocos2d@@QEAAXXZ
+    - name: retain
+      return-type: void
+      args: null
+      specifiers: []
+      qualifiers: []
+      instructions: >
+        ff 41 14 c3
+
+    # ?retainCount@CCObject@cocos2d@@QEBAIXZ
+    - name: retainCount
+      return-type: unsigned int
+      args: null
+      specifiers: []
+      qualifiers: [const]
+      instructions: >
+        8b 41 14 c3
+
+    # ?getObjType@CCObject@cocos2d@@QEBA?AW4CCObjectType@2@XZ
+    - name: getObjType
+      return-type: CCObjectType
+      args: null
+      specifiers: []
+      qualifiers: [const]
+      instructions:
+        inline-definition: |
+          return m_eObjType;
+    
+    # ?setObjType@CCObject@cocos2d@@QEAAXW4CCObjectType@2@@Z
+    - name: setObjType
+      return-type: void
+      args:
+        - { type: CCObjectType, name: null }
+      
+      specifiers: []
+      qualifiers: []
+      instructions:
+        inline-definition: |
+          m_eObjType = ${param_1};
+
+  fields:
+    - { type: unsigned int, name: m_uID }
+    - { type: int, name: m_nLuaID }
+    - { type: int, name: m_nTag }
+    - { type: unsigned int, name: m_uReference }
+    - { type: unsigned int, name: m_uAutoReleaseCount }
+    - { type: CCObjectType, name: m_eObjType }
+    - { type: int, name: unk0x20 }
+    - { type: int, name: unk0x24 }
+    - { type: int, name: unk0x28 }
+    - { type: int, name: unk0x2c }
+    - { type: int, name: unk0x30 }
+    - { type: int, name: unk0x34 }

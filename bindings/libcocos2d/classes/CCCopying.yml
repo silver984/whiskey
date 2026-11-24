@@ -9,6 +9,7 @@ class:
   constructors: null
   static-functions: null
   member-functions:
+    # ?copyWithZone@CCCopying@cocos2d@@UEAAPEAVCCObject@2@PEAVCCZone@2@@Z
     - name: copyWithZone
       return-type: CCObject*
       args:
