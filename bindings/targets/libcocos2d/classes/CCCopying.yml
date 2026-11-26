@@ -4,7 +4,7 @@ class:
   bases: []
   module:
     name: libcocos2d
-    type: shared-lib
+    type: shared library
 
   constructors: null
   static-functions: null

@@ -4,7 +4,7 @@ class:
   bases: []
   module:
     name: libcocos2d
-    type: shared-lib
+    type: shared library
   
   constructors:
     # ??0CCZone@cocos2d@@QEAA@PEAVCCObject@1@@Z
@@ -13,7 +13,7 @@ class:
     
       instructions:
         inline-definition: |
-          // WHISKEY_ASSERT_TODO_INLINE_DEF();
+          WHISKEY_ASSERT_TODO_INLINE_DEF();
   
   static-functions: null
   member-functions: null

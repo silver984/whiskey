@@ -4,39 +4,23 @@ class:
   bases: [CCCopying]
   module:
     name: libcocos2d
-    type: shared-lib
+    type: shared library
 
   constructors:
     # "??0CCObject@cocos2d@@QEAA@XZ"
     - args: null
-      instructions: >
-        33 d2 c7 41 10 ff ff ff ff 48 8d 05 ?? ?? ?? ??
-        89 51 0c 48 89 01 8b 05 7c 39 1a 00 48 c7 41 14
-        01 00 00 00 48 c7 41 20 ff ff ff ff 48 89 51 2c
-        89 51 34 83 f8 fe 72 02 8b c2 ff c0 89 05 56 39
-        1a 00 89 41 08 48 8b c1 c3
+      instructions: 33d2c74110ffffffff488d0558dc0d0089510c4889018b057c391a0048c741140100000048c74120ffffffff4889512c89513483f8fe72028bc2ffc0890556391a00894108488bc1c3
 
     # ??0CCObject@cocos2d@@QEAA@AEBV01@@Z
     - args:
         - { type: CCObject const&, name: null }
 
-      instructions: >
-        48 8d 05 ?? ?? ?? ?? 48 89 01 8b 42 08 89 41 08
-        8b 42 0c 89 41 0c 8b 42 10 89 41 10 8b 42 14 89
-        41 14 8b 42 18 89 41 18 8b 42 1c 89 41 1c 8b 42
-        20 89 41 20 8b 42 24 89 41 24 8b 42 28 89 41 28
-        8b 42 2c 89 41 2c 8b 42 30 89 41 30 8b 42 34 89
-        41 34 48 8b c1 c3
+      instructions: 488d0551590d004889018b42088941088b420c89410c8b42108941108b42148941148b42188941188b421c89411c8b42208941208b42248941248b42288941288b422c89412c8b42308941308b4234894134488bc1c3
   
   # ??1CCObject@cocos2d@@UEAA@XZ
   destructor:
     specifiers: [virtual]
-    instructions: >
-      48 89 5c 24 08 57 48 83 ec 20 48 8b d9 48 8d 05
-      ?? ?? ?? ?? 48 89 01 83 79 18 00 76 10 e8 ?? ??
-      ?? ?? 48 8b c8 48 8b d3 e8 ?? ?? ?? ?? 83 7b 0c
-      00 74 1d e8 ?? ?? ?? ?? 48 8b 08 48 8b 01 48 8b
-      d3 ff 50 10 90 48 8b 5c 24 30 48 83 c4 20 5f c3
+    instructions: 48895c2408574883ec20488bd9488d0504dc0d00488901837918007610e8be8fffff488bc8488bd3e8638fffff837b0c00741de848bb0a00488b08488b01488bd3ff501090488b5c24304883c4205fc3
 
   static-functions:
     # ?createWithCoder@CCObject@cocos2d@@SAPEAV12@PEAVDS_Dictionary@@@Z
@@ -84,8 +68,7 @@ class:
       specifiers: [virtual]
       qualifiers: []
       instructions:
-        inline-definition: |
-          // no-op
+        inline-definition:
       
     # ?update@CCObject@cocos2d@@UEAAXM@Z
     - name: update
@@ -96,8 +79,7 @@ class:
       specifiers: [virtual]
       qualifiers: []
       instructions:
-        inline-definition: |
-          // no-op
+        inline-definition:
 
     # todo: ?canEncode@CCObject@cocos2d@@UEAA_NXZ
     - name: canEncode
@@ -136,10 +118,7 @@ class:
       args: null
       specifiers: []
       qualifiers: []
-      instructions: >
-        40 53 48 83 ec 20 48 8b d9 e8 ?? ?? ?? ?? 48 8b
-        c8 48 8b d3 e8 ?? ?? ?? ?? 48 8b c3 48 83 c4 20
-        5b c3
+      instructions: 40534883ec20488bd9e8a28effff488bc8488bd3e8378bffff488bc34883c4205bc3
 
     # ?copy@CCObject@cocos2d@@QEAAPEAV12@XZ
     - name: copy
@@ -147,8 +126,7 @@ class:
       args: null
       specifiers: []
       qualifiers: []
-      instructions: >
-        48 8b 01 33 d2 48 ff 20
+      instructions: 488b0133d248ff20
     
     # ?isSingleReference@CCObject@cocos2d@@QEBA_NXZ
     - name: isSingleReference
@@ -166,9 +144,7 @@ class:
       args: null
       specifiers: []
       qualifiers: []
-      instructions: >
-        83 41 14 ff 75 0c 48 8b 01 ba 01 00 00 00 48 ff
-        60 08 c3
+      instructions: 834114ff750c488b01ba0100000048ff6008c3
 
     # ?retain@CCObject@cocos2d@@QEAAXXZ
     - name: retain
@@ -176,8 +152,7 @@ class:
       args: null
       specifiers: []
       qualifiers: []
-      instructions: >
-        ff 41 14 c3
+      instructions: ff4114c3
 
     # ?retainCount@CCObject@cocos2d@@QEBAIXZ
     - name: retainCount
@@ -185,8 +160,7 @@ class:
       args: null
       specifiers: []
       qualifiers: [const]
-      instructions: >
-        8b 41 14 c3
+      instructions: 8b4114c3
 
     # ?getObjType@CCObject@cocos2d@@QEBA?AW4CCObjectType@2@XZ
     - name: getObjType
