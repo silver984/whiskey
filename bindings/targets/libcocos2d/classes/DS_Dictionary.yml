@@ -9,17 +9,52 @@ class:
   constructors:
     # ??0DS_Dictionary@@QEAA@XZ
     - args: null
-      instructions: 48894c240853574883ec28488bf9e82db506009033c0488987d0000000488987d8000000488987e00000008887e8000000488d4c2450e835d90500488bd0488d8fd0000000e8a65900004c8d05cf620d00488d542448488bcfe812ba06004c8d05c3620d00488d542450488d4c2448e8dcb80600488bc8488d15b2620d00e80db606004c8d05aa620d00488d542450488d4c2448e8d7b90600488b9fd80000004c8d0579620d00488d542450488bcfe86cbc0600488bc84c8d0576620d00488d542458e858bc0600488b0848894bf8488bc74883c4285f5bc3
-  
+      specifiers: []
+      byte-instructions: >
+        48 89 4c 24 08 53 57 48 83 ec 28 48 8b f9 e8 ?? 
+        ?? ?? ?? 90 33 c0 48 89 87 d0 00 00 00 48 89 87 
+        d8 00 00 00 48 89 87 e0 00 00 00 88 87 e8 00 00 
+        00 48 8d 4c 24 50 e8 ?? ?? ?? ?? 48 8b d0 48 8d 
+        8f d0 00 00 00 e8 ?? ?? ?? ?? 4c 8d 05 cf 62 0d 
+        00 48 8d 54 24 48 48 8b cf e8 ?? ?? ?? ?? 4c 8d 
+        05 c3 62 0d 00 48 8d 54 24 50 48 8d 4c 24 48 e8 
+        ?? ?? ?? ?? 48 8b c8 48 8d 15 b2 62 0d 00 e8 ?? 
+        ?? ?? ?? 4c 8d 05 aa 62 0d 00 48 8d 54 24 50 48 
+        8d 4c 24 48 e8 ?? ?? ?? ?? 48 8b 9f d8 00 00 00 
+        4c 8d 05 79 62 0d 00 48 8d 54 24 50 48 8b cf e8 
+        ?? ?? ?? ?? 48 8b c8 4c 8d 05 76 62 0d 00 48 8d 
+        54 24 58 e8 ?? ?? ?? ?? 48 8b 08 48 89 4b f8 48 
+        8b c7 48 83 c4 28 5f 5b c3
+
   # ??1DS_Dictionary@@QEAA@XZ
   destructor:
     specifiers: []
-    instructions: 40534883ec30488bd9488b89d00000004885c9744b488b93e0000000482bd14883e2f84881fa001000007218488b41f84883c227482bc84883e9084883f91f772c488bc8e893ed0d0033c0488983d0000000488983d8000000488983e0000000488bcb4883c4305be9d3c5070033c04533c94533c0488944242033d233c9ff15b44d0e00
+    byte-instructions: >
+      40 53 48 83 ec 30 48 8b d9 48 8b 89 d0 00 00 00 
+      48 85 c9 74 ?? 48 8b 93 e0 00 00 00 48 2b d1 48 
+      83 e2 f8 48 81 fa 00 10 00 00 72 ?? 48 8b 41 f8 
+      48 83 c2 27 48 2b c8 48 83 e9 08 48 83 f9 1f 77 
+      ?? 48 8b c8 e8 ?? ?? ?? ?? 33 c0 48 89 83 d0 00 
+      00 00 48 89 83 d8 00 00 00 48 89 83 e0 00 00 00 
+      48 8b cb 48 83 c4 30 5b e9 ?? ?? ?? ?? 33 c0 45 
+      33 c9 45 33 c0 48 89 44 24 20 33 d2 33 c9 ff 15 
+      b4 4d 0e 00
 
-  static-functions: null
+  static-functions:
+    # ?copyFile@DS_Dictionary@@SAXPEBD0@Z
+    - name: copyFile
+      return-type: void
+      args:
+        - { type: char const*, name: null }
+        - { type: char const*, name: null }
+      
+      specifiers: []
+
+
   member-functions:
     # ?addBoolValuesToMapForKey@DS_Dictionary@@QEAAXAEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NU?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@std@@@2@@std@@PEBD_N@Z
     - name: addBoolValuesToMapForKey
+      return-type: void
       args:
         - { type: std::map<std::string, bool>&, name: null }
         - { type: char const*, name: null }
@@ -27,10 +62,37 @@ class:
 
       specifiers: []
       qualifiers: []
-      instructions: 48895c24185556574881ec80000000488b05da5919004833c44889442478498bf0488bea488bf94d85c074154584c97510498bd0e8678d000084c00f841e010000488b8fd80000004883e908488d542430e8bab30600488d4c2430e8c09a06004885c00f84cb0000000f1f8000000000488d4c2430e876a10600488bd80f57c00f114424580f57c9f30f7f4c2468488bc8e85ad30c004c8bc0488bd3488d4c2458e87a45ffff904c8d442458488d542448488bcde817d9ffff488b08c6414001488b5424704883fa0f763248ffc2488b4c2458488bc14881fa0010000072194883c227488b49f8482bc14883e8084883f81f0f8787000000e82fc10c00488d542438488d4c2430e8e4c00600488bc8488d542440e8d7c00600488b0848894c2430488d4c2430e8f59906004885c00f853cffffff4885f67426488b8fd8000000488bc1482b87d000000048c1f8034883f801760b488d41f8488987d8000000488b4c24784833cce864c10c00488b9c24b00000004881c4800000005f5e5dc3
-    
+      byte-instructions: >
+        48 89 5c 24 18 55 56 57 48 81 ec 80 00 00 00 48 
+        8b 05 da 59 19 00 48 33 c4 48 89 44 24 78 49 8b 
+        f0 48 8b ea 48 8b f9 4d 85 c0 74 ?? 45 84 c9 75 
+        ?? 49 8b d0 e8 ?? ?? ?? ?? 84 c0 0f 84 ?? ?? ?? 
+        ?? 48 8b 8f d8 00 00 00 48 83 e9 08 48 8d 54 24 
+        30 e8 ?? ?? ?? ?? 48 8d 4c 24 30 e8 ?? ?? ?? ?? 
+        48 85 c0 0f 84 ?? ?? ?? ?? 0f 1f 80 00 00 00 00 
+        48 8d 4c 24 30 e8 ?? ?? ?? ?? 48 8b d8 0f 57 c0 
+        0f 11 44 24 58 0f 57 c9 f3 0f 7f 4c 24 68 48 8b 
+        c8 e8 ?? ?? ?? ?? 4c 8b c0 48 8b d3 48 8d 4c 24 
+        58 e8 ?? ?? ?? ?? 90 4c 8d 44 24 58 48 8d 54 24 
+        48 48 8b cd e8 ?? ?? ?? ?? 48 8b 08 c6 41 40 01 
+        48 8b 54 24 70 48 83 fa 0f 76 ?? 48 ff c2 48 8b 
+        4c 24 58 48 8b c1 48 81 fa 00 10 00 00 72 ?? 48 
+        83 c2 27 48 8b 49 f8 48 2b c1 48 83 e8 08 48 83 
+        f8 1f 0f 87 ?? ?? ?? ?? e8 ?? ?? ?? ?? 48 8d 54 
+        24 38 48 8d 4c 24 30 e8 ?? ?? ?? ?? 48 8b c8 48 
+        8d 54 24 40 e8 ?? ?? ?? ?? 48 8b 08 48 89 4c 24 
+        30 48 8d 4c 24 30 e8 ?? ?? ?? ?? 48 85 c0 0f 85 
+        ?? ?? ?? ?? 48 85 f6 74 ?? 48 8b 8f d8 00 00 00 
+        48 8b c1 48 2b 87 d0 00 00 00 48 c1 f8 03 48 83 
+        f8 01 76 ?? 48 8d 41 f8 48 89 87 d8 00 00 00 48 
+        8b 4c 24 78 48 33 cc e8 ?? ?? ?? ?? 48 8b 9c 24 
+        b0 00 00 00 48 81 c4 80 00 00 00 5f 5e 5d c3 48 
+        c7 44 24 20 00 00 00 00 45 33 c9 45 33 c0 33 d2 
+        33 c9 ff 15 f0 20 0d 00 
+
     # ?addBoolValuesToMapForKeySpecial@DS_Dictionary@@QEAAXAEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NU?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@std@@@2@@std@@PEBD_N@Z
     - name: addBoolValuesToMapForKeySpecial
+      return-type: void
       args:
         - { type: std::map<std::string, bool>&, name: null }
         - { type: char const*, name: null }
@@ -38,4 +100,235 @@ class:
       
       specifiers: []
       qualifiers: []
-      instructions: 48895c241848897424205557415441564157488bec4881ec80000000488b052d5819004833c4488945f84d8bf04c8bfa488bf14d85c074154584c97510498bd0e8bb8b000084c00f8403020000488b8ed80000004883e908488d55b0e80fb20600488d4db0e8169906004885c00f84b20100004533e4488d4db0e8d19f0600488bd80f57c00f1145d84c8965e84c8965f0488bc8e8b7d10c004c8bc0488bd3488d4dd8e8d843ffff90488d4dd848837df00f480f474dd8ff15fb1e0d0085c00f8ff3000000488d7dd8488b4dd8488b55f04883fa0f480f47f9488b45e84883f804723a488d1c3841b9040000004c8d0538460d00488bd3488bcfe8c1bd0c00483bc3740d482bc74883f8ff0f85a7000000488b55f0488b45e8488b4dd8488d7dd84883fa0f480f47f94883f8047236488d1c3841b9040000004c8d05f4450d00488bd3488bcfe875bd0c00483bc37409482bc74883f8ff755f488b55f0488b45e8488b4dd8488d7dd84883fa0f480f47f94883f806722a488d1c3841b9060000004c8d05b4450d00488bd3488bcfe82dbd0c00483bc37409482bc74883f8ff75174c8d45d8488d55c8498bcfe87fd6ffff488b08c6414001488b55f04883fa0f763148ffc2488b4dd8488bc14881fa0010000072194883c227488b49f8482bc14883e8084883f81f0f878a000000e899be0c00488d55b8488d4db0e850be0600488bc8488d55c0e844be0600488b0848894db0488d4db0e8649706004885c00f8551feffff4d85f67426488b8ed8000000488bc1482b86d000000048c1f8034883f801760b488d41f8488986d8000000488b4df84833cce8d4be0c004c8d9c2480000000498b5b40498b7348498be3415f415e415c5f5dc3
+      byte-instructions: >
+        48 89 5c 24 18 48 89 74 24 20 55 57 41 54 41 56 
+        41 57 48 8b ec 48 81 ec 80 00 00 00 48 8b 05 2d 
+        58 19 00 48 33 c4 48 89 45 f8 4d 8b f0 4c 8b fa 
+        48 8b f1 4d 85 c0 74 ?? 45 84 c9 75 ?? 49 8b d0 
+        e8 ?? ?? ?? ?? 84 c0 0f 84 ?? ?? ?? ?? 48 8b 8e 
+        d8 00 00 00 48 83 e9 08 48 8d 55 b0 e8 ?? ?? ?? 
+        ?? 48 8d 4d b0 e8 ?? ?? ?? ?? 48 85 c0 0f 84 ?? 
+        ?? ?? ?? 45 33 e4 48 8d 4d b0 e8 ?? ?? ?? ?? 48 
+        8b d8 0f 57 c0 0f 11 45 d8 4c 89 65 e8 4c 89 65 
+        f0 48 8b c8 e8 ?? ?? ?? ?? 4c 8b c0 48 8b d3 48 
+        8d 4d d8 e8 ?? ?? ?? ?? 90 48 8d 4d d8 48 83 7d 
+        f0 0f 48 0f 47 4d d8 ff 15 fb 1e 0d 00 85 c0 0f 
+        8f ?? ?? ?? ?? 48 8d 7d d8 48 8b 4d d8 48 8b 55 
+        f0 48 83 fa 0f 48 0f 47 f9 48 8b 45 e8 48 83 f8 
+        04 72 ?? 48 8d 1c 38 41 b9 04 00 00 00 4c 8d 05 
+        38 46 0d 00 48 8b d3 48 8b cf e8 ?? ?? ?? ?? 48 
+        3b c3 74 ?? 48 2b c7 48 83 f8 ff 0f 85 ?? ?? ?? 
+        ?? 48 8b 55 f0 48 8b 45 e8 48 8b 4d d8 48 8d 7d 
+        d8 48 83 fa 0f 48 0f 47 f9 48 83 f8 04 72 ?? 48 
+        8d 1c 38 41 b9 04 00 00 00 4c 8d 05 f4 45 0d 00 
+        48 8b d3 48 8b cf e8 ?? ?? ?? ?? 48 3b c3 74 ?? 
+        48 2b c7 48 83 f8 ff 75 ?? 48 8b 55 f0 48 8b 45 
+        e8 48 8b 4d d8 48 8d 7d d8 48 83 fa 0f 48 0f 47 
+        f9 48 83 f8 06 72 ?? 48 8d 1c 38 41 b9 06 00 00 
+        00 4c 8d 05 b4 45 0d 00 48 8b d3 48 8b cf e8 ?? 
+        ?? ?? ?? 48 3b c3 74 ?? 48 2b c7 48 83 f8 ff 75 
+        ?? 4c 8d 45 d8 48 8d 55 c8 49 8b cf e8 ?? ?? ?? 
+        ?? 48 8b 08 c6 41 40 01 48 8b 55 f0 48 83 fa 0f 
+        76 ?? 48 ff c2 48 8b 4d d8 48 8b c1 48 81 fa 00 
+        10 00 00 72 ?? 48 83 c2 27 48 8b 49 f8 48 2b c1 
+        48 83 e8 08 48 83 f8 1f 0f 87 ?? ?? ?? ?? e8 ?? 
+        ?? ?? ?? 48 8d 55 b8 48 8d 4d b0 e8 ?? ?? ?? ?? 
+        48 8b c8 48 8d 55 c0 e8 ?? ?? ?? ?? 48 8b 08 48 
+        89 4d b0 48 8d 4d b0 e8 ?? ?? ?? ?? 48 85 c0 0f 
+        85 ?? ?? ?? ?? 4d 85 f6 74 ?? 48 8b 8e d8 00 00 
+        00 48 8b c1 48 2b 86 d0 00 00 00 48 c1 f8 03 48 
+        83 f8 01 76 ?? 48 8d 41 f8 48 89 86 d8 00 00 00 
+        48 8b 4d f8 48 33 cc e8 ?? ?? ?? ?? 4c 8d 9c 24 
+        80 00 00 00 49 8b 5b 40 49 8b 73 48 49 8b e3 41 
+        5f 41 5e 41 5c 5f 5d c3 4c 89 64 24 20 45 33 c9 
+        45 33 c0 33 d2 33 c9 ff 15 5b 1e 0d 00 
+    
+    # ?checkCompatibility@DS_Dictionary@@QEAAXXZ
+    - name: checkCompatibility
+      return-type: void
+      args: null
+      specifiers: []
+      qualifiers: []
+      byte-instructions: >
+        40 53 48 83 ec 20 4c 8d 05 83 41 0d 00 48 8b d9 
+        48 8d 54 24 30 e8 ?? ?? ?? ?? 48 8b c8 4c 8d 05 
+        88 41 0d 00 48 8d 54 24 38 e8 ?? ?? ?? ?? 48 8b 
+        c8 33 d2 e8 ?? ?? ?? ?? 83 f8 02 0f 9c c0 88 83 
+        e8 00 00 00 48 83 c4 20 5b c3 
+    
+    # ?cleanStringWhiteSpace@DS_Dictionary@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    - name: cleanStringWhiteSpace
+      return-type: std::string
+      args:
+        - { type: std::string const&, name: null }
+      
+      specifiers: []
+      qualifiers: []
+      byte-instructions: >
+        48 89 5c 24 08 48 89 6c 24 18 48 89 54 24 10 56 
+        57 41 56 48 83 ec 30 4c 8b f2 c7 44 24 20 00 00 
+        00 00 49 8b d0 49 8b ce e8 ?? ?? ?? ?? c7 44 24 
+        20 01 00 00 00 49 83 7e 18 0f 76 ?? 49 8b 1e 48 
+        8b f3 49 03 76 10 48 8b eb 49 03 6e 10 eb ?? 49 
+        8b 46 10 4a 8d 34 30 49 8b de 4a 8d 2c 30 48 3b 
+        de 74 ?? 0f be 0b ff 15 4c 1d 0d 00 85 c0 75 ?? 
+        48 ff c3 48 3b de 75 ?? 48 3b de 74 ?? 48 8d 7b 
+        01 48 3b fe 74 ?? 0f be 0f ff 15 29 1d 0d 00 85 
+        c0 75 ?? 0f b6 07 88 03 48 ff c3 48 ff c7 48 3b 
+        fe 75 ?? 48 2b eb 49 8b 7e 10 48 8b c7 49 83 7e 
+        18 0f 76 ?? 49 2b 1e 49 8b 0e eb ?? 49 2b de 49 
+        8b ce 48 2b c3 48 3b c5 48 0f 42 e8 48 03 cb 48 
+        2b fd 4c 8b c7 4c 2b c3 49 ff c0 48 8d 14 29 e8 
+        ?? ?? ?? ?? 49 89 7e 10 49 8b c6 48 8b 5c 24 50 
+        48 8b 6c 24 60 48 83 c4 30 41 5e 5f 5e c3 
+    
+    # ?decodeObjectForKey@DS_Dictionary@@QEAAPEAVCCObject@cocos2d@@PEBD_NH@Z
+    - name: decodeObjectForKey
+      return-type: CCObject*
+      args:
+        - { type: char const*, name: null }
+        - { type: bool, name: null }
+        - { type: int, name: null }
+      
+      specifiers: []
+      qualifiers: []
+      byte-instructions: >
+        48 89 5c 24 08 57 48 83 ec 20 41 8b f9 48 8b d9 
+        45 84 c0 75 ?? e8 ?? ?? ?? ?? 84 c0 75 ?? 33 c0 
+        48 8b 5c 24 30 48 83 c4 20 5f c3 83 ff ff 75 ?? 
+        48 8d 15 4d 3b 0d 00 48 8b cb e8 ?? ?? ?? ?? 8b 
+        f8 e8 ?? ?? ?? ?? 48 8b c8 4c 8b c3 8b d7 e8 ?? 
+        ?? ?? ?? 48 8b 93 d8 00 00 00 48 8b ca 48 2b 8b 
+        d0 00 00 00 48 c1 f9 03 48 83 f9 01 76 ?? 48 8d 
+        4a f8 48 89 8b d8 00 00 00 48 8b 5c 24 30 48 83 
+        c4 20 5f c3 
+
+    # ?getAllKeys@DS_Dictionary@@QEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    - name: getAllKeys
+      return-type: void
+      args:
+        - { type: std::string const&, name: null }
+      
+      specifiers: []
+      qualifiers: []
+      byte-instructions: >
+        48 89 5C 24 18 55 56 57 41 54 41 55 41 56 41 57 
+        48 81 EC 80 00 00 00 48 8B 05 C2 4B 19 00 48 33 
+        C4 48 89 44 24 78 48 8B FA 48 89 54 24 40 45 33 
+        E4 44 89 64 24 38 4C 89 22 4C 89 62 08 4C 89 62 
+        10 C7 44 24 38 01 00 00 00 48 8B 89 D8 00 00 00 
+        48 83 E9 08 48 8D 54 24 30 E8 ?? ?? ?? ?? 48 8D 
+        4C 24 30 E8 ?? ?? ?? ?? 48 85 C0 0F 84 ?? ?? ?? 
+        ?? 49 BD FF FF FF FF FF FF FF 07 0F 1F 44 00 00 
+        48 8D 4C 24 30 E8 ?? ?? ?? ?? 48 8B D8 0F 57 C0 
+        0F 11 44 24 58 0F 57 C9 F3 0F 7F 4C 24 68 48 8B 
+        C8 E8 ?? ?? ?? ?? 4C 8B C0 48 8B D3 48 8D 4C 24 
+        58 E8 ?? ?? ?? ?? 90 48 8B 4F 10 48 8B 5F 08 48 
+        3B D9 74 ?? 0F 10 44 24 58 0F 11 03 0F 10 4C 24 
+        68 0F 11 4B 10 48 83 47 08 20 E9 ?? ?? ?? ?? 48 
+        8B 07 48 8B F3 48 2B F0 48 C1 FE 05 49 3B F5 0F 
+        84 ?? ?? ?? ?? 48 8D 6E 01 48 2B C8 48 C1 F9 05 
+        48 8B D1 48 D1 EA 49 8B C5 48 2B C2 48 3B C8 76 
+        ?? 4D 8B FD EB ?? 48 8D 04 0A 4C 8B FD 48 3B C5 
+        4C 0F 43 F8 4D 3B FD 0F 87 ?? ?? ?? ?? 49 C1 E7 
+        05 49 8B CF E8 ?? ?? ?? ?? 4C 8B F0 48 C1 E6 05 
+        48 8D 4E 20 48 03 C8 0F 10 44 24 58 0F 11 04 06 
+        0F 10 4C 24 68 0F 11 4C 06 10 48 8B 57 08 48 8B 
+        07 48 3B DA 75 ?? 49 8B CE 48 3B C2 0F 84 ?? ?? 
+        ?? ?? 0F 57 C0 0F 11 01 4C 89 61 10 4C 89 61 18 
+        0F 10 00 0F 11 01 0F 10 48 10 0F 11 49 10 4C 89 
+        60 10 48 C7 40 18 0F 00 00 00 C6 00 00 48 8D 49 
+        20 48 83 C0 20 48 3B C2 75 ?? E9 ?? ?? ?? ?? 49 
+        8B D6 48 3B C3 74 ?? 66 0F 1F 84 00 00 00 00 00 
+        0F 57 C0 0F 11 02 4C 89 62 10 4C 89 62 18 0F 10 
+        00 0F 11 02 0F 10 48 10 0F 11 4A 10 4C 89 60 10 
+        48 C7 40 18 0F 00 00 00 C6 00 00 48 8D 52 20 48 
+        83 C0 20 48 3B C3 75 ?? 48 8B 47 08 48 3B D8 74 
+        ?? 0F 57 C0 0F 11 01 4C 89 61 10 4C 89 61 18 0F 
+        10 03 0F 11 01 0F 10 4B 10 0F 11 49 10 4C 89 63 
+        10 48 C7 43 18 0F 00 00 00 C6 03 00 48 8D 49 20 
+        48 83 C3 20 48 3B D8 75 ?? 48 8B 1F 48 85 DB 74 
+        ?? 48 8B 77 08 48 3B DE 74 ?? 66 0F 1F 44 00 00 
+        48 8B CB E8 ?? ?? ?? ?? 48 83 C3 20 48 3B DE 75 
+        ?? 48 8B 0F 48 8B 57 10 48 2B D1 48 83 E2 E0 48 
+        81 FA 00 10 00 00 72 ?? 48 83 C2 27 48 8B 41 F8 
+        48 2B C8 48 83 E9 08 48 83 F9 1F 0F 87 ?? ?? ?? 
+        ?? 48 8B C8 E8 ?? ?? ?? ?? 4C 89 37 48 C1 E5 05 
+        49 03 EE 48 89 6F 08 4B 8D 04 37 48 89 47 10 48 
+        8D 54 24 48 48 8D 4C 24 30 E8 ?? ?? ?? ?? 48 8B 
+        C8 48 8D 54 24 50 E8 ?? ?? ?? ?? 48 8B 08 48 89 
+        4C 24 30 48 8D 4C 24 30 E8 ?? ?? ?? ?? 48 85 C0 
+        0F 85 ?? ?? ?? ?? 48 8B C7 48 8B 4C 24 78 48 33 
+        CC E8 ?? ?? ?? ?? 48 8B 9C 24 D0 00 00 00 48 81 
+        C4 80 00 00 00 41 5F 41 5E 41 5D 41 5C 5F 5E 5D 
+        C3 4C 89 64 24 20 45 33 C9 45 33 C0 33 D2 33 C9 
+        FF 15 52 11 0D 00 CC E8 ?? ?? ?? ?? CC E8 ?? ?? 
+        ?? ??
+    
+    # ?getArrayForKey@DS_Dictionary@@QEAAPEAVCCArray@cocos2d@@PEBD_N@Z
+    # - name: getArrayForKey
+    #   return-type: CCArray*
+    #   args:
+    #     - { type: char const*, name: null }
+    #     - { type: bool, name: null }
+
+    #   specifiers: []
+    #   qualifiers: []
+    #   byte-instructions: >
+    #     48 89 5C 24 10 48 89 6C 24 18 48 89 74 24 20 57 
+    #     48 83 EC 60 48 8B 05 85 48 19 00 48 33 C4 48 89 
+    #     44 24 50 48 8B F9 45 84 C0 75 ?? E8 ?? ?? ?? ?? 
+    #     84 C0 75 ?? E8 ?? ?? ?? ?? E9 ?? ?? ?? ?? E8 ?? 
+    #     ?? ?? ?? 48 8B E8 48 8D 15 ?? ?? ?? ?? 48 8B CF 
+    #     E8 ?? ?? ?? ?? 48 8B CF E8 ?? ?? ?? ?? 8B F0 33 
+    #     DB 85 C0 0F 8E ?? ?? ?? ?? 0F 1F 80 00 00 00 00 
+    #     44 8B C3 48 8D 54 24 30 48 8B CF E8 ?? ?? ?? ?? 
+    #     90 48 8D 54 24 30 48 83 7C 24 48 0F 48 0F 47 54 
+    #     24 30 48 8B CF E8 ?? ?? ?? ?? 48 85 C0 74 ?? 48 
+    #     8B D0 48 8B CD E8 ?? ?? ?? ?? 90 48 8B 54 24 48 
+    #     48 83 FA 0F 76 ?? 48 FF C2 48 8B 4C 24 30 48 8B 
+    #     C1 48 81 FA 00 10 00 00 72 ?? 48 83 C2 27 48 8B 
+    #     49 F8 48 2B C1 48 83 E8 08 48 83 F8 1F 77 ?? E8 
+    #     ?? ?? ?? ?? FF C3 3B DE 7C ?? 48 8B 8F D8 00 00 
+    #     00 48 8B C1 48 2B 87 D0 00 00 00 48 C1 F8 03 48 
+    #     83 F8 01 76 ?? 48 8D 41 F8 48 89 87 D8 00 00 00 
+    #     48 8B C5 48 8B 4C 24 50 48 33 CC E8 ?? ?? ?? ?? 
+    #     4C 8D 5C 24 60 49 8B 5B 18 49 8B 6B 20 49 8B 73 
+    #     28 49 8B E3 5F C3 48 C7 44 24 20 00 00 00 00 45 
+    #     33 C9 45 33 C0 33 D2 33 C9 FF 15 E9 0F 0D 00
+    
+    # ?getBoolForKey@DS_Dictionary@@QEAA_NPEBD@Z
+    - name: getBoolForKey
+      return-type: bool
+      args:
+        - { type: char const*, name: null }
+
+      specifiers: []
+      qualifiers: []
+      byte-instructions: >
+        48 89 5C 24 10 48 89 74 24 20 57 48 83 EC 20 80 
+        B9 E8 00 00 00 00 48 8D 35 ?? ?? ?? ?? 48 8B F9 
+        4C 8D 05 ?? ?? ?? ?? 48 8B 89 D8 00 00 00 4C 0F 
+        45 C6 48 8B DA 48 83 E9 08 48 8D 54 24 30 E8 ?? 
+        ?? ?? ?? 48 8D 4C 24 30 E8 ?? ?? ?? ?? 48 85 C0 
+        74 ?? 48 8D 4C 24 30 E8 ?? ?? ?? ?? 48 8B C8 48 
+        8B D3 E8 ?? ?? ?? ?? 48 8D 54 24 40 48 8D 4C 24 
+        30 85 C0 74 ?? 80 BF E8 00 00 00 00 4C 8D 05 ?? 
+        ?? ?? ?? 4C 0F 45 C6 E8 ?? ?? ?? ?? 48 8B 08 48 
+        89 4C 24 30 48 8D 4C 24 30 E8 ?? ?? ?? ?? 48 85 
+        C0 75 ?? 32 C0 48 8B 5C 24 38 48 8B 74 24 48 48 
+        83 C4 20 5F C3 E8 ?? ?? ?? ?? 0F B6 9F E8 00 00 
+        00 48 8D 4C 24 40 E8 ?? ?? ?? ?? 48 8B D0 48 8D 
+        0D ?? ?? ?? ?? 48 8D 05 ?? ?? ?? ?? 84 DB 48 0F 
+        45 C8 E8 ?? ?? ?? ?? 85 C0 75 ?? 48 8B 5C 24 38 
+        B0 01 48 8B 74 24 48 48 83 C4 20 5F 
+        
+  # todo: alot more other functions
+
+  fields:
+    - { type: std::uint64_t, name: unk0x08, length: null }
+    - { type: std::byte, name: unk0x10, length: 0xC0 }
+    - { type: std::uint64_t, name: unk0xd0, length: null }
+    - { type: std::int64_t, name: unk0xd8, length: null }
+    - { type: std::uint64_t, name: unk0xe0, length: null }
+    - { type: std::byte, name: unk0xe8, length: null }

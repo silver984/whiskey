@@ -17,7 +17,7 @@ class:
 
       specifiers: [virtual]
       qualifiers: []
-      instructions:
+      byte-instructions:
         inline-definition: |
           return nullptr;
 

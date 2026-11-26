@@ -11,7 +11,8 @@ class:
     - args:
       - { type: CCObject*, name: null }
     
-      instructions:
+      specifiers: []
+      byte-instructions:
         inline-definition: |
           WHISKEY_ASSERT_TODO_INLINE_DEF();
   

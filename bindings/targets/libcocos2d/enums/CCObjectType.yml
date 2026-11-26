@@ -1,4 +1,4 @@
 enum:
   name: CCObjectType
-  underlying-type: int
+  underlying-type: std::int32_t
   values: null
